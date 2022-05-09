@@ -25,10 +25,26 @@
             ]
         },
         {
-            "name": "flutter_flavour (profile mode)",
+            "name": "flutter_flavour_dev (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "program": "lib/main_prod.dart",
+            "args": [
+                "--flavor",
+                "dev"
+            ]
+        },
+        {
+            "name": "flutter_flavour_prod (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "lib/main_prod.dart",
+            "args": [
+                "--flavor",
+                "prod"
+            ]
         },
         {
             "name": "flutter_flavour (release mode)",

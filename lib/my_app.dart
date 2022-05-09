@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_flavour/app_data.dart';
 
 class MyApp extends StatelessWidget {
   final String? type;
@@ -7,12 +9,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: (kDebugMode) ? true : false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          backgroundColor:
+              (type == AppData.devType["type"]) ? Colors.red : Colors.green,
+          title: Text(type ?? ""),
+        ),
         body: Center(
           child: Text(type ?? ""),
         ),
